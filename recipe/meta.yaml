@@ -1,5 +1,5 @@
 {% set name = "tuna" %}
-{% set version = "0.3.7" %}
+{% set version = "0.4.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 06dfc24e9ea7ce19d0502965079392ec126133c37224631d3a8fab1f7d6e5747
+  sha256: b035ff41f59a001f0df678a725cdd3b08fd6c2ab4fa11e456421424f2fe08e65
 
 build:
   number: 0
   noarch: python
-  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
   entry_points:
     - tuna = tuna.cli:main
 
@@ -34,7 +34,7 @@ about:
   # no license file included in source
   # https://github.com/nschloe/tuna/issues/36
   license_file: LICENSE
-  summary: 'tuna is a Python profile viewer inspired by the amazing SnakeViz.'
+  summary: tuna is a Python profile viewer inspired by the amazing SnakeViz.
 
 extra:
   recipe-maintainers:
