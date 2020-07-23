@@ -10,7 +10,7 @@ source:
   sha256: 476d5807da3f565d523b4c5b5a6a577e189a3614be2794c991b325e247bc980a
 
 build:
-  number: 0
+  number: 1
   # Importlib is not python3.8 safe
   # noarch: python
   script: {{ PYTHON }} -m pip install . --no-deps -vv
