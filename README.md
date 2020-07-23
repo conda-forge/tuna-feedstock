@@ -5,7 +5,7 @@ Home: https://github.com/nschloe/tuna
 
 Package license: MIT
 
-Feedstock license: BSD 3-Clause
+Feedstock license: BSD-3-Clause
 
 Summary: tuna is a Python profile viewer inspired by the amazing SnakeViz.
 
