@@ -1,5 +1,5 @@
 {% set name = "tuna" %}
-{% set version = "0.4.6" %}
+{% set version = "0.4.8" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 476d5807da3f565d523b4c5b5a6a577e189a3614be2794c991b325e247bc980a
+  sha256: a487b13fa564101bbc71b731689e1f86b599789c3d940f4b2f40580eefd2133e
 
 build:
-  number: 1
+  number: 0
   # Importlib is not python3.8 safe
   # noarch: python
   script: {{ PYTHON }} -m pip install . --no-deps -vv
