@@ -1,5 +1,5 @@
 {% set name = "tuna" %}
-{% set version = "0.4.8" %}
+{% set version = "0.5.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,11 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: a487b13fa564101bbc71b731689e1f86b599789c3d940f4b2f40580eefd2133e
+  sha256: 2ea74f5bcc53a086b42ac8222659eb401a36a71e4e64697c826471d1e168ae68
 
 build:
   number: 0
-  # Importlib is not python3.8 safe
-  # noarch: python
+  noarch: python
   script: {{ PYTHON }} -m pip install . --no-deps -vv
   entry_points:
     - tuna = tuna.cli:main
@@ -23,7 +22,10 @@ requirements:
     - pip
   run:
     - python
-    - importlib_metadata  # [py<38]
+    # While not strictly necessary for python 3.8 and above
+    # it does make the package noarch if we simply include it without
+    # a selector
+    - importlib_metadata
 
 test:
   commands:
