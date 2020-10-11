@@ -11,8 +11,7 @@ source:
 
 build:
   number: 0
-  # Importlib is not python3.8 safe
-  # noarch: python
+  noarch: python
   script: {{ PYTHON }} -m pip install . --no-deps -vv
   entry_points:
     - tuna = tuna.cli:main
@@ -23,7 +22,10 @@ requirements:
     - pip
   run:
     - python
-    - importlib_metadata  # [py<38]
+    # While not strictly necessary for python 3.8 and above
+    # it does make the package noarch if we simply include it without
+    # a selector
+    - importlib_metadata
 
 test:
   commands:
