@@ -1,5 +1,5 @@
 {% set name = "tuna" %}
-{% set version = "0.5.7" %}
+{% set version = "0.5.8" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 2a47765b323f9b2d607df79d2abf96a2b8fdbf57fd0e78b888dc5d96f3508eda
+  sha256: 99c8392441bdf1b2c2df6fdf07f6c43186030f7fe038579faea89a8a82c0883c
 
 build:
   number: 0
