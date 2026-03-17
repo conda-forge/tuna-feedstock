@@ -6,11 +6,11 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: d47f3e39e80af961c8df016ac97d1643c3c60b5eb451299da0ab5fe411d8866c
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . --no-deps -vv
   entry_points:
@@ -18,16 +18,18 @@ build:
 
 requirements:
   host:
-    - python >=3.6
+    - python {{ python_min }}
     - pip
   run:
-    - python >=3.6
+    - python >={{ python_min }}
     # While not strictly necessary for python 3.8 and above
     # it does make the package noarch if we simply include it without
     # a selector
     - importlib_metadata
 
 test:
+  requires:
+    - python {{ python_min }}
   commands:
     - tuna --help
 
