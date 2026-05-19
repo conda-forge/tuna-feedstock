@@ -1,4 +1,4 @@
-{% set version = "0.5.13" %}
+{% set version = "0.5.15" %}
 
 package:
   name: tuna
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/t/tuna/tuna-{{ version }}.tar.gz
-  sha256: 2d2e69992d2030097be550a662815cad150218e7a42b732d37e27de4d745939c
+  sha256: 0109ab102374ecf5d47f950267b516b6009c3cf48e8caba3b2c859ed3f6fb996
 
 build:
   number: 0
